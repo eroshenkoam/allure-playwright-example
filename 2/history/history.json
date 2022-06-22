@@ -1,0 +1,1 @@
+{"chromium example.spec.ts Issues should see issue with number 76":{"statistic":{"failed":0,"broken":0,"skipped":0,"passed":1,"unknown":0,"total":1},"items":[{"uid":"311baa4d9bd03b85","reportUrl":"https://eroshenkoam.github.io/allure-playwright-example/2//#testresult/311baa4d9bd03b85","status":"passed","time":{"start":1655919768969,"stop":1655919778595,"duration":9626}}]}}
