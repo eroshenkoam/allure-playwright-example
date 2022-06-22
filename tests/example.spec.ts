@@ -3,6 +3,7 @@ import {allure} from "allure-playwright"
 
 test.describe('Issues', () => {
     test('should see issue with number 76', async ({page}) => {
+        allure.severity("critical")
         allure.owner("eroshenkoam")
         allure.link({url: 'https://github.com', name: 'Тестинг'})
         allure.issue({url: 'https://github.com/eroshenkoam/allure-playwright-example/issues/1', name: "Bug #1"})
@@ -35,6 +36,7 @@ test.describe('Issues', () => {
     });
 
     test('should see issue with number 74', async ({page}) => {
+        allure.severity("blocker")
         allure.owner("eroshenkoam")
         allure.link({url: 'https://github.com', name: 'Тестинг'})
         allure.issue({url: 'https://github.com/eroshenkoam/allure-playwright-example/issues/1', name: "Bug #1"})
