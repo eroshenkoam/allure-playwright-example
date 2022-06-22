@@ -1,20 +1,33 @@
-import { test, expect, Page } from '@playwright/test';
+import {test, expect, Page} from '@playwright/test';
 
 test.describe('Issues', () => {
-  test('should see issue with number 76', async ({page}) => {
-    await page.goto('https://github.com/');
+    test('should see issue with number 76', async ({page}) => {
 
-    const searchInput = page.locator('.header-search-input');
+        await test.step("Открываем главную страницу", async () => {
+            await page.goto('https://github.com/');
+        })
 
-    await searchInput.click()
-    await searchInput.fill('eroshenkoam/allure-example')
-    await searchInput.press('Enter')
+        const repository = 'eroshenkoam/allure-example'
+        await test.step("Ищем репозиторий: " + repository, async () => {
+            const searchInput = page.locator('.header-search-input');
 
-    await page.locator('a:has-text("eroshenkoam/allure-example") >> nth=0').click()
+            await searchInput.click()
+            await searchInput.fill(repository)
+            await searchInput.press('Enter')
+        })
 
-    await page.locator("#issues-tab").click()
+        await test.step("Переходим в репозиторий по ссылке: " + repository, async () => {
+            await page.locator('a:has-text("' + repository + '") >> nth=0').click()
+        })
 
-    const issue = page.locator("text=#76")
-    await expect(issue).toBeVisible()
-  });
+        await test.step("Открываем таб Issues", async () => {
+            await page.locator("#issues-tab").click()
+        })
+
+        const issueNumber = '#76'
+        await test.step("Проверяем что существует Issue с номером " + issueNumber, async () => {
+            const issue = page.locator("text=" + issueNumber)
+            await expect(issue).toBeVisible()
+        })
+    });
 })
