@@ -1,0 +1,1 @@
+[{"uid":"d9407b65e6307170","name":"should see issue with number 76","time":{"start":1655921652434,"stop":1655921662727,"duration":10293},"status":"passed","severity":"critical"},{"uid":"a2bdcb457382815e","name":"should see issue with number 74","time":{"start":1655921662730,"stop":1655921669690,"duration":6960},"status":"passed","severity":"blocker"}]
